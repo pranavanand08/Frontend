@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.nav{
+    display: flex;
+    gap: 40px;
+}
+.nav a{
+    text-decoration: none;
+    color: beige;
+}
+
+.Logo{
+    color: rgb(238, 242, 242);
+}
+.cards{
+    display: flex;
+    padding: 40px;
+    justify-content: space-around;
+    
+}
+
+.child-cards{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.child-cards img{
+    width: 160px;
+}

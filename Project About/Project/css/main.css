@@ -1,0 +1,23 @@
+a {
+    
+    text-decoration: none;
+    color: #000;
+    padding: 10px 50px 5px 50px;
+    font-size: 22px;
+    font-family: 'arial', sans-serif;
+}
+a:hover {
+    text-decoration: none;
+    color: #f36523;
+    padding: 10px 50px 5px 50px;
+    font-size: 22px;
+    font-family: 'arial', sans-serif;
+}
+.col-md-6 {
+    width:50%;
+}
+.menu_container {
+    background-color: antiquewhite;
+    color:#000;
+    padding:20px;
+}

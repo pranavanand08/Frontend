@@ -1,0 +1,26 @@
+List of Tags
+
+Structure Tags: <!DOCTYPE html>, <html lang="en">, <html>, <head>, <title>, <body>
+Semantic Tag: (Header, footer, aside, article, nav, main, aside)
+heading Tags: <h1> to <h6>
+Form Tags: <form>, <fieldset>, <label>, <input>, <button>, <textarea>
+Table Tag: <table>, <th>, <thead>, <tr>, <td>, <tbody>, <tfoot>
+Paragraph : <p>,<u>, <b>, <strong>, <i>
+Division : <div>
+Meta Tags: <meta> 
+     Attributes: viewport, content, initial-scale, description, title, keyword, author, og 
+
+Center Alignment: <center>
+Anchor Tag: <a> 
+Image: <img>, <svg>
+Order & Unordered List: <ul>,<ol>,<li>
+Media Tags: <audio>, <video>, <iframe>
+
+
+Our Project: Engineering College 
+
+Home Page: <Mani>
+About Page: <pranav>
+Departments: <Varun>
+Gallery & Video: <surya>
+Contact Us: <ashwathi>

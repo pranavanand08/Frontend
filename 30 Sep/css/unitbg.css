@@ -1,0 +1,32 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+   .body{ 
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("https://picsum.photos/1200/800");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .box {
+      background: #b9cef0; 
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+    }
+
+    .box h1 {
+      font-size: 50px; 
+      margin-bottom: 20px;
+    }
+
+    .box p {
+      font-size: 30px;
+    }
