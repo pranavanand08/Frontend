@@ -1,0 +1,61 @@
+
+.parent1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    background-image: url(https://picsum.photos/1200/800);
+    background-size: cover;
+    background-position: center;
+   
+}
+.child
+{
+    display:flex;
+    background-color: rgb(148, 51, 186);
+    max-width:500px;
+    padding:60px;
+}
+ 
+@media (max-width:1600px){
+
+    .child{
+        font-size: 13px;
+        
+    }
+}
+@media (max-width:1440px){
+       
+    .child {
+         background-color: transparent;
+         color: transparent;
+        
+    }
+}
+@media (max-width:1024px){
+
+    .child{
+        font-size: 13px;
+        background-color: aqua;
+        color: black;
+        
+    }
+}
+@media (max-width:768px){
+
+    .child {
+         background-color: transparent;
+         color: transparent;
+        
+    }
+}
+@media (max-width:425px){
+
+    .child{
+        font-size: 13px;
+        background-color: rgb(250, 240, 100);
+        color: black;
+            }
+}
