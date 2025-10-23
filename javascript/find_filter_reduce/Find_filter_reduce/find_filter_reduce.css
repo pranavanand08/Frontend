@@ -1,0 +1,146 @@
+/*filter */
+const numbersArray1 = [2, 4, 5, 8]
+const evenNumbers = numbersArray1.filter(number => number % 2 === 0)
+console.log(evenNumbers)
+
+const numbersArray2 = [7, 10, 15, 20]
+const numbersGreaterThanTen = numbersArray2.filter(number => number > 10)
+console.log(numbersGreaterThanTen)
+
+const numbersArray3 = [1, 3, 6, 8]
+const numbersGreaterThanFive = numbersArray3.filter(number => number > 5)
+console.log(numbersGreaterThanFive)
+
+const numbersArray4 = [-1, 0, 2, 3]
+const positiveNumbers = numbersArray4.filter(number => number >= 0)
+console.log(positiveNumbers)
+
+const numbersArray5 = [5, 9, 12]
+const multiplesOfThree = numbersArray5.filter(number => number % 3 === 0)
+console.log(multiplesOfThree)
+
+const numbersArray6 = [10, 20, 21]
+const oddNumbers = numbersArray6.filter(number => number % 2 !== 0)
+console.log(oddNumbers)
+
+const numbersArray7 = [3, 6, 9, 12]
+const multiplesOfSix = numbersArray7.filter(number => number % 6 === 0)
+console.log(multiplesOfSix)
+
+const numbersArray8 = [11, 12, 13, 14]
+const numbersLessThanThirteen = numbersArray8.filter(number => number < 13)
+console.log(numbersLessThanThirteen)
+
+const numbersArray9 = [50, 60, 70, 100]
+const numbersGreaterThanSixty = numbersArray9.filter(number => number > 60)
+console.log(numbersGreaterThanSixty)
+
+const numbersArray10 = [5, 15, 25, 35]
+const numbersEndingWithFive = numbersArray10.filter(number => number % 10 === 5)
+console.log(numbersEndingWithFive)
+
+const numbersArray11 = [1, 4, 9, 16]
+const perfectSquares = numbersArray11.filter(number => Number.isInteger(Math.sqrt(number)))
+console.log(perfectSquares)
+
+const numbersArray12 = [1, 2, 3, 4, 5, 6]
+const numbersLessThanFour = numbersArray12.filter(number => number < 4)
+console.log(numbersLessThanFour)
+
+/*find */
+const numbersArray13 = [1, 5, 9, 12]
+const firstEvenNumber = numbersArray13.find(number => number % 2 === 0)
+console.log(firstEvenNumber)
+
+const numbersArray14 = [20, 21, 22, 23]
+const firstNumberGreaterThanTwentyOne = numbersArray14.find(number => number > 21)
+console.log(firstNumberGreaterThanTwentyOne)
+
+const numbersArray15 = [8, 15, 2]
+const firstNumberDivisibleByFour = numbersArray15.find(number => number % 4 === 0)
+console.log(firstNumberDivisibleByFour)
+
+const numbersArray16 = [100, 101, 103]
+const firstNumberGreaterThanHundred = numbersArray16.find(number => number > 100)
+console.log(firstNumberGreaterThanHundred)
+
+const numbersArray17 = [1, 2, 0, 5]
+const firstZeroNumber = numbersArray17.find(number => number === 0)
+console.log(firstZeroNumber)
+
+const numbersArray18 = [3, 6, 9, 12]
+const firstNumberGreaterThanTen = numbersArray18.find(number => number > 10)
+console.log(firstNumberGreaterThanTen)
+
+const numbersArray19 = [11, 13, 17, 20]
+const firstEvenNumberInArray = numbersArray19.find(number => number % 2 === 0)
+console.log(firstEvenNumberInArray)
+
+const numbersArray20 = [2, 4, 6, 9]
+const firstOddNumber = numbersArray20.find(number => number % 2 !== 0)
+console.log(firstOddNumber)
+
+const numbersArray21 = [25, 50, 75, 100]
+const firstNumberGreaterThanSixty = numbersArray21.find(number => number > 60)
+console.log(firstNumberGreaterThanSixty)
+
+const numbersArray22 = [15, 30, 45]
+const firstNumberDivisibleByTen = numbersArray22.find(number => number % 10 === 0)
+console.log(firstNumberDivisibleByTen)
+
+const numbersArray23 = [1, 3, 5, 7]
+const firstNumberGreaterThanFive = numbersArray23.find(number => number > 5)
+console.log(firstNumberGreaterThanFive)
+
+const numbersArray24 = [33, 66, 99]
+const firstNumberDivisibleByEleven = numbersArray24.find(number => number % 11 === 0)
+console.log(firstNumberDivisibleByEleven)
+
+/*reduce*/
+const numbersArray25 = [1, 2, 3]
+const sumOfNumbers = numbersArray25.reduce((accumulator, currentNumber) => accumulator + currentNumber, 0)
+console.log(sumOfNumbers)
+
+const numbersArray26 = [2, 3, 4]
+const productOfNumbers = numbersArray26.reduce((accumulator, currentNumber) => accumulator * currentNumber, 1)
+console.log(productOfNumbers)
+
+const numbersArray27 = [10, 5, 18]
+const maximumNumber = numbersArray27.reduce((maxValue, currentNumber) => maxValue > currentNumber ? maxValue : currentNumber)
+console.log(maximumNumber)
+
+const numbersArray28 = [20, 10, 5]
+const minimumNumber = numbersArray28.reduce((minValue, currentNumber) => minValue < currentNumber ? minValue : currentNumber)
+console.log(minimumNumber)
+
+const matrixArray29 = [[5], [10], [15]]
+const flattenedArray = matrixArray29.reduce((flatArray, currentArray) => flatArray.concat(currentArray), [])
+console.log(flattenedArray)
+
+const numbersArray30 = [5, 5, 5]
+const sumOfRepeatedNumbers = numbersArray30.reduce((accumulator, currentNumber) => accumulator + currentNumber, 0)
+console.log(sumOfRepeatedNumbers)
+
+const numbersArray31 = [2, 4, 6]
+const sumOfEvenNumbers = numbersArray31.reduce((accumulator, currentNumber) => currentNumber % 2 === 0 ? accumulator + currentNumber : accumulator, 0)
+console.log(sumOfEvenNumbers)
+
+const numbersArray32 = [1, 2, 3, 4]
+const sumOfOddNumbers = numbersArray32.reduce((accumulator, currentNumber) => currentNumber % 2 !== 0 ? accumulator + currentNumber : accumulator, 0)
+console.log(sumOfOddNumbers)
+
+const numbersArray33 = [10, 20, 30, 40]
+const averageOfNumbers = numbersArray33.reduce((sum, number, index, array) => index === array.length - 1 ? (sum + number) / array.length : sum + number)
+console.log(averageOfNumbers)
+
+const numbersArray34 = [3, 3, 3]
+const countOfNumbers = numbersArray34.reduce((count) => count + 1, 0)
+console.log(countOfNumbers)
+
+const numbersArray35 = [-1, 1, -2, 2]
+const sumOfAbsoluteNumbers = numbersArray35.reduce((accumulator, currentNumber) => accumulator + Math.abs(currentNumber), 0)
+console.log(sumOfAbsoluteNumbers)
+
+const wordArray36 = ['a', 'b', 'c']
+const concatenatedString = wordArray36.reduce((accumulator, currentWord) => accumulator + currentWord, '')
+console.log(concatenatedString)
