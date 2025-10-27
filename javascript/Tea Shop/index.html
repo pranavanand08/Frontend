@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rajini Murugan Tea Stall</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <h1>Rajini Murugan Tea Stall</h1>
+
+  <button id="showProducts">Available Products</button>
+
+  <div id="productContainer"></div>
+  <div id="varietyContainer"></div>
+  <button id="paymentBtn">Payment</button>
+
+  <script>
+    const products = [
+      {
+        name: "Tea",
+        varieties: [
+          { name: "Masala Tea", price: 15 },
+          { name: "Lemon Tea", price: 20 },
+          { name: "Ginger Tea", price: 18 }
+        ]
+      },
+      {
+        name: "Coffee",
+        varieties: [
+          { name: "Filter Coffee", price: 25 },
+          { name: "Black Coffee", price: 22 },
+          { name: "Cold Coffee", price: 30 }
+        ]
+      },
+      {
+        name: "Snacks",
+        varieties: [
+          { name: "Samosa", price: 12 },
+          { name: "Vada", price: 10 },
+          { name: "Biscuits", price: 8 }
+        ]
+      }
+    ];
+
+    const showProductsBtn = document.getElementById('showProducts');
+    const productContainer = document.getElementById('productContainer');
+    const varietyContainer = document.getElementById('varietyContainer');
+    const paymentBtn = document.getElementById('paymentBtn');
+
+    let selectedVariety = null;
+    paymentBtn.style.display = 'none';
+
+    showProductsBtn.addEventListener('click', function() {
+      productContainer.innerHTML = "";
+      varietyContainer.innerHTML = "";
+      paymentBtn.style.display = 'none';
+      selectedVariety = null;
+
+      products.forEach(function(product) {
+        const btn = document.createElement('button');
+        btn.textContent = product.name;
+
+        btn.addEventListener('click', function() {
+          showVarieties(product.varieties);
+        });
+
+        productContainer.appendChild(btn);
+      });
+    });
+
+    function showVarieties(varieties) {
+      varietyContainer.innerHTML = "";
+      paymentBtn.style.display = 'none';
+      selectedVariety = null;
+
+      varieties.forEach(function(item) {
+        const btn = document.createElement('button');
+        btn.textContent = item.name + " - ₹" + item.price;
+
+        btn.addEventListener('click', function() {
+          selectedVariety = item;
+          paymentBtn.textContent = "Pay ₹" + item.price + " for " + item.name;
+          paymentBtn.style.display = 'block';
+        });
+
+        varietyContainer.appendChild(btn);
+      });
+    }
+
+    paymentBtn.addEventListener('click', function() {
+      if (selectedVariety) {
+        alert("Your payment is received and will give the product shortly");
+        paymentBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
