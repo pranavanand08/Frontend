@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Search Generator</title>
+</head>
+<body>
+    <h1>Fruit Search Generator</h1>
+    <p id="result"></p>
+    <input type="text" id="inputdatas" placeholder="Enter Fruit Name">
+    <button id="res">Generate</button>
+    <img src="" id="images" alt="">
+
+    <script>
+        const button = document.getElementById("res")
+
+        button.addEventListener("click", () => {
+            const datas = document.getElementById("inputdatas").value.trim()
+            const images_Result = document.getElementById("images")
+            const para = document.getElementById("result")
+            const data = datas.toLowerCase()
+
+            if (data === "apple") {
+                para.textContent = "Your Search Result: Apple"
+                images_Result.src = "img/apple.jpeg"
+            }
+            else if (data === "banana") {
+                para.textContent = "Your Search Result: Banana"
+                images_Result.src = "img/download.jpeg"
+            }
+            else if (data === "orange") {
+                para.textContent = "Your Search Result: Orange"
+                images_Result.src = "img/orange.jpeg"
+            }
+            else if (data === "grape") {
+                para.textContent = "Your Search Result: Grape"
+                images_Result.src = "img/grape.jpeg"
+            }
+            else if (data === "mango") {
+                para.textContent = "Your Search Result: Mango"
+                images_Result.src = "img/mango.jpeg"
+            }
+            else if (data === "pineapple") {
+                para.textContent = "Your Search Result: Pineapple"
+                images_Result.src = "img/pineapple.jpeg"
+            }
+            else if (data === "watermelon") {
+                para.textContent = "Your Search Result: Watermelon"
+                images_Result.src = "img/watermelon.jpeg"
+            }
+            else if (data === "papaya") {
+                para.textContent = "Your Search Result: Papaya"
+                images_Result.src = "img/papaya.jpeg"
+            }
+            else if (data === "strawberry") {
+                para.textContent = "Your Search Result: Strawberry"
+                images_Result.src = "img/strawberry.jpeg"
+            }
+            else if (data === "guava") {
+                para.textContent = "Your Search Result: Guava"
+                images_Result.src = "img/guava.jpeg"
+            }
+            else {
+                para.textContent = `Your search data: ${datas} is not found`
+                images_Result.src = ""
+            }
+        })
+    </script>
+</body>
+</html>
