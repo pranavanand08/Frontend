@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Form Validation</title>
+</head>
+<body>
+
+<h2>Form Validation Example</h2>
+
+<form onsubmit="return validateForm()">
+
+  Name: <br>
+  <input type="text" id="name"><br><br>
+
+  Email: <br>
+  <input type="text" id="email"><br><br>
+
+  Age: <br>
+  <input type="number" id="age"><br><br>
+
+  Mobile Number: <br>
+  <input type="text" id="mobile"><br><br>
+
+  Gender: <br>
+  <select id="gender">
+    <option value="">Select</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select><br><br>
+
+  About (max 20 characters): <br>
+  <textarea id="about" maxlength="20"></textarea><br><br>
+
+  <input type="submit" value="Submit">
+
+</form>
+
+<p id="output" style="color:red; font-weight:bold;"></p>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let age = document.getElementById("age").value.trim();
+  let mobile = document.getElementById("mobile").value.trim();
+  let gender = document.getElementById("gender").value;
+  let about = document.getElementById("about").value.trim();
+
+  let output = document.getElementById("output");
+  output.style.color = "red";
+
+  if (name === "" || email === "" || age === "" || mobile === "" || gender === "" || about === "") {
+    output.textContent = "⚠️ Please fill out all fields.";
+    return false;
+  }
+
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    output.textContent = "⚠️ Please enter a valid email address.";
+    return false;
+  }
+
+  if (age < 18) {
+    output.textContent = "⚠️ Age must be 18 or above.";
+    return false;
+  }
+
+  if (mobile.length !== 10 || isNaN(mobile)) {
+    output.textContent = "⚠️ Mobile number must be 10 digits.";
+    return false;
+  }
+
+  if (about.length > 20) {
+    output.textContent = "⚠️ Text should not exceed 20 characters.";
+    return false;
+  }
+
+  
+  output.style.color = "green";
+  output.textContent = "✅ Form submitted successfully!";
+  return false; 
+}
+</script>
+
+</body>
+</html>
