@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetching data</title>
+    <style>
+        h4{
+            color:rgb(35, 181, 135);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        p{
+            color: rgb(192, 97, 184);
+        }
+</style>
+</head>
+<body>
+    <h2>Fetching the Online Data</h2>
+    <div id="block">
+    </div>
+    <script>
+        const getdata = async () => {
+
+
+            try {
+                console.log('fetching data');
+                const cards = await fetch("https://dummyjson.com/recipes?limit=10")
+                const result = await cards.json()
+                const data = result.recipes;
+                const container = document.getElementById("block")
+
+            data.forEach(items => {
+                const box = document.createElement("div")
+                box.innerHTML = `<h4>${items.name}</h4> <p>${items.tags}</p>`;
+
+                container.appendChild(box)
+            });
+        }catch(error){
+            console.log("something went wrong",error)
+        }finally{
+            console.log("process done !")
+        }
+    };
+    getdata()
+
+    </script>
+</body>
+</html>
