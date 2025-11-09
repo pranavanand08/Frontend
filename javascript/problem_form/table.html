@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted Problems Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e9ecef;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f7f7f7;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Reported Environmental Problems</h2>
+  <table id="problemsTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Problem</th>
+        <th>Where</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data will be inserted here -->
+    </tbody>
+  </table>
+
+  <script>
+    const tableBody = document.querySelector("#problemsTable tbody");
+    const formData = JSON.parse(localStorage.getItem("formdata")) || [];
+
+    formData.forEach(entry => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${entry.username}</td>
+        <td>${entry.mobile}</td>
+        <td>${entry.problem}</td>
+        <td>${entry.city}</td>
+        <td>${entry.review}</td>
+      `;
+      tableBody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

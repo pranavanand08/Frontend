@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problems of Environment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .data {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+    #para {
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <div class="data">
+      <label>Enter your name:</label>
+      <input id="name" type="text" placeholder="In capital letters">
+    </div>
+
+    <div class="data">
+      <label>Enter your mobile no:</label>
+      <input id="mobile" type="tel" placeholder="10-digit number">
+    </div>
+
+    <div class="data">
+      <label>Enter the problem:</label>
+      <textarea id="problem" required></textarea>
+    </div>
+
+    <div class="data">
+      <label>Where it happens in the city:</label>
+      <textarea id="city" required></textarea>
+    </div>
+
+
+    <div class="data">
+      <label>Review the problem:</label>
+      <textarea id="review" required></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+    <p id="para"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const para = document.getElementById("para");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const problem = document.getElementById("problem").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const review = document.getElementById("review").value.trim();
+
+      if (!username || !mobile || !problem || !city ||  !review) {
+        para.textContent = "Please fill all fields before submitting";
+        para.style.color = "blue";
+        return;
+      }
+
+      if (mobile.length !== 10 || isNaN(mobile)) {
+        para.textContent = "Mobile number must be exactly 10 digits";
+        para.style.color = "blue";
+        return;
+      }
+
+      const data = JSON.parse(localStorage.getItem("formdata")) || [];
+      const newEntry = { username, mobile, problem, city,  review };
+      data.push(newEntry);
+      localStorage.setItem("formdata", JSON.stringify(data));
+
+      alert("Successfully submitted!");
+      form.reset();
+      window.location.href = "table.html";
+    });
+  </script>
+
+</body>
+</html>
